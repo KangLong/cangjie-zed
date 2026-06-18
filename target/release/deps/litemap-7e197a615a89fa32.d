@@ -1,0 +1,10 @@
+G:\Work\Projects\Self\cangjie-zed\target\release\deps\litemap-7e197a615a89fa32.d: G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\litemap-0.8.2\src\lib.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\litemap-0.8.2\src\map.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\litemap-0.8.2\src\store\mod.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\litemap-0.8.2\src\store\slice_impl.rs
+
+G:\Work\Projects\Self\cangjie-zed\target\release\deps\liblitemap-7e197a615a89fa32.rlib: G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\litemap-0.8.2\src\lib.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\litemap-0.8.2\src\map.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\litemap-0.8.2\src\store\mod.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\litemap-0.8.2\src\store\slice_impl.rs
+
+G:\Work\Projects\Self\cangjie-zed\target\release\deps\liblitemap-7e197a615a89fa32.rmeta: G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\litemap-0.8.2\src\lib.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\litemap-0.8.2\src\map.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\litemap-0.8.2\src\store\mod.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\litemap-0.8.2\src\store\slice_impl.rs
+
+G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\litemap-0.8.2\src\lib.rs:
+G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\litemap-0.8.2\src\map.rs:
+G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\litemap-0.8.2\src\store\mod.rs:
+G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\litemap-0.8.2\src\store\slice_impl.rs:

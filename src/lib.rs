@@ -1,5 +1,7 @@
 use zed_extension_api::{self as zed, Command, LanguageServerId, Result, Worktree};
 
+const SDK_PATH: &str = r#"G:\Work\DevTools\SDK\cj\cangjie"#;
+
 struct CangjieExtension;
 
 impl zed::Extension for CangjieExtension {
@@ -12,33 +14,36 @@ impl zed::Extension for CangjieExtension {
         _language_server_id: &LanguageServerId,
         worktree: &Worktree,
     ) -> Result<Command> {
-        // Try to find LSPServer in PATH first
-        if let Some(path) = worktree.which("LSPServer") {
-            return Ok(Command {
-                command: path,
-                args: vec![],
-                env: vec![],
-            });
-        }
+        let server_path = if let Some(path) = worktree.which("LSPServer") {
+            path
+        } else {
+            // Use known SDK installation path
+            format!(r#"{}\tools\bin\LSPServer.exe"#, SDK_PATH)
+        };
 
-        // Fallback: common Cangjie SDK installation paths
-        let possible_paths = vec![
-            r#"G:\Work\DevTools\SDK\cj\cangjie\tools\bin\LSPServer.exe"#,
-            r#"C:\Program Files\Cangjie\tools\bin\LSPServer.exe"#,
-            r#"D:\Program Files\Zed\tools\bin\LSPServer.exe"#,
-        ];
+        let mut env = worktree.shell_env();
+        env.push(format!("CANGJIE_HOME={}", SDK_PATH));
 
-        for path in possible_paths {
-            if std::path::Path::new(path).exists() {
-                return Ok(Command {
-                    command: path.to_string(),
-                    args: vec![],
-                    env: vec![],
-                });
+        let runtime_lib = format!(r#"{}\runtime\lib\windows_x86_64_cjnative"#, SDK_PATH);
+        let tools_bin = format!(r#"{}\tools\bin"#, SDK_PATH);
+        let tools_lib = format!(r#"{}\tools\lib"#, SDK_PATH);
+
+        // Prepend Cangjie paths to existing PATH
+        let mut new_path = format!("{};{};{}", runtime_lib, tools_bin, tools_lib);
+        for entry in &env {
+            if entry.starts_with("PATH=") {
+                new_path.push(';');
+                new_path.push_str(&entry[5..]);
+                break;
             }
         }
+        env.push(format!("PATH={}", new_path));
 
-        Err("LSPServer not found. Please install the Cangjie SDK and ensure LSPServer.exe is in your PATH.".into())
+        Ok(Command {
+            command: server_path,
+            args: vec![],
+            env,
+        })
     }
 }
 

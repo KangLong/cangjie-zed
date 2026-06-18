@@ -1,0 +1,10 @@
+G:\Work\Projects\Self\cangjie-zed\target\debug\deps\icu_normalizer-2e85eb24008455fa.d: G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.2.0\src\lib.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.2.0\src\properties.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.2.0\src\provider.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.2.0\src\uts46.rs
+
+G:\Work\Projects\Self\cangjie-zed\target\debug\deps\libicu_normalizer-2e85eb24008455fa.rlib: G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.2.0\src\lib.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.2.0\src\properties.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.2.0\src\provider.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.2.0\src\uts46.rs
+
+G:\Work\Projects\Self\cangjie-zed\target\debug\deps\libicu_normalizer-2e85eb24008455fa.rmeta: G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.2.0\src\lib.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.2.0\src\properties.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.2.0\src\provider.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.2.0\src\uts46.rs
+
+G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.2.0\src\lib.rs:
+G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.2.0\src\properties.rs:
+G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.2.0\src\provider.rs:
+G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\icu_normalizer-2.2.0\src\uts46.rs:
