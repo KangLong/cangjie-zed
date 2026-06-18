@@ -22,10 +22,8 @@ impl zed::Extension for CangjieExtension {
 
         let mut env = worktree.shell_env();
 
-        // Set CANGJIE_HOME so LSPServer can find the SDK
         env.push(("CANGJIE_HOME".to_string(), SDK_PATH.to_string()));
 
-        // Prepend Cangjie runtime and tool paths to PATH (matching envsetup.bat)
         let cangjie_paths = vec![
             format!(r#"{}\runtime\lib\windows_x86_64_cjnative"#, SDK_PATH),
             format!(r#"{}\lib\windows_x86_64_cjnative"#, SDK_PATH),
@@ -45,7 +43,6 @@ impl zed::Extension for CangjieExtension {
         }
         env.push(("PATH".to_string(), new_path));
 
-        // LSPServer args: project type "src" and disable auto import
         let server_args = vec!["src".to_string(), "--disableAutoImport".to_string()];
 
         Ok(Command {
@@ -53,6 +50,20 @@ impl zed::Extension for CangjieExtension {
             args: server_args,
             env,
         })
+    }
+
+    fn language_server_initialization_options(
+        &mut self,
+        _language_server_id: &LanguageServerId,
+        _worktree: &Worktree,
+    ) -> Result<Option<serde_json::Value>> {
+        Ok(Some(serde_json::json!({
+            "multiModuleOption": {},
+            "conditionCompileOption": {},
+            "singleConditionCompileOption": {},
+            "conditionCompilePaths": [],
+            "targetLib": ""
+        })))
     }
 }
 
