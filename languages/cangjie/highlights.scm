@@ -1,4 +1,4 @@
-; Cangjie highlights - named nodes + keywords
+; Cangjie highlights - named nodes + keywords A
 (lineComment) @comment
 (blockComment) @comment
 (stringLiteral) @string
@@ -75,23 +75,3 @@
 "static" @keyword
 "get" @keyword
 "set" @keyword
-"if" @keyword
-"else" @keyword
-"for" @keyword
-"in" @keyword
-"do" @keyword
-"while" @keyword
-"match" @keyword
-"case" @keyword
-"try" @keyword
-"catch" @keyword
-"finally" @keyword
-"throw" @keyword
-"return" @keyword
-"break" @keyword
-"continue" @keyword
-"is" @keyword
-"super" @keyword
-"this" @keyword
-"true" @boolean
-"false" @boolean
