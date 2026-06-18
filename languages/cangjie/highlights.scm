@@ -15,6 +15,9 @@
 (postfixExpression
   (atomicVariable) @function.call
   (callSuffix))
+(postfixExpression
+  (atomicVariable) @function.call
+  (fieldAccess))
 (fieldAccess
   (atomicVariable) @function.call)
 (className) @type
