@@ -170,40 +170,6 @@ npx tree-sitter parse test.cj
 | 中间方法和最后方法无法在 AST 中区分 | 语法结构一致，只能通过父节点 `callSuffix` 间接判断 |
 | 枚举常量无法与普通变量区分 | 枚举常量在 AST 中也是 `identifier`，无特殊节点 |
 
-## 如何发布到 Zed 市场
-
-1. 在 GitHub 上创建仓库 `KangLong/cangjie-zed`
-2. 将本地代码推送上去：
-
-```bash
-git remote add origin https://github.com/KangLong/cangjie-zed.git
-git push -u origin master
-```
-
-3. Fork [zed-industries/extensions](https://github.com/zed-industries/extensions)
-4. 克隆你的 fork：
-
-```bash
-git clone https://github.com/KangLong/extensions.git
-cd extensions
-```
-
-5. 添加子模块：
-
-```bash
-git submodule add https://github.com/KangLong/cangjie-zed.git extensions/cangjie
-```
-
-6. 在 `extensions.toml` 中添加：
-
-```toml
-[cangjie]
-submodule = "extensions/cangjie"
-version = "0.1.0"
-```
-
-7. 提交并推送，然后向 [zed-industries/extensions](https://github.com/zed-industries/extensions) 提 PR。
-
 ## 许可证
 
 MIT
