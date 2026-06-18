@@ -79,34 +79,40 @@ impl zed::Extension for CangjieExtension {
         let root = worktree.root_path();
         let root_uri = Self::file_uri(&root);
 
-        // Try to read cjpm.toml for package name
-        let package_name = match worktree.read_text_file("cjpm.toml") {
-            Ok(content) => {
-                let mut name = String::new();
-                let mut in_package = false;
-                for line in content.lines() {
-                    let t = line.trim();
-                    if t == "[package]" {
-                        in_package = true;
-                        continue;
-                    }
-                    if t.starts_with('[') && t.ends_with(']') {
-                        in_package = false;
-                        continue;
-                    }
-                    if in_package {
-                        if let Some(val) = t.strip_prefix("name = ") {
-                            name = val.trim_matches('"').to_string();
+        // Try to find cjpm.toml in root or subdirectories
+        let cjpm_paths = ["cjpm.toml", "gamecrit-server/cjpm.toml"];
+        let (package_name, project_subdir) = {
+            let mut name = String::new();
+            let mut subdir = String::new();
+            for path in &cjpm_paths {
+                if let Ok(content) = worktree.read_text_file(path) {
+                    let mut in_pkg = false;
+                    for line in content.lines() {
+                        let t = line.trim();
+                        if t == "[package]" { in_pkg = true; continue; }
+                        if in_pkg && t.starts_with("name = ") {
+                            name = t.strip_prefix("name = ").unwrap().trim_matches('"').to_string();
+                            if let Some(idx) = path.rfind('/') {
+                                subdir = path[..idx].to_string();
+                            }
+                            break;
                         }
                     }
+                    if !name.is_empty() { break; }
                 }
-                name
             }
-            Err(_) => String::new(),
+            (name, subdir)
         };
 
+        let project_root = if project_subdir.is_empty() {
+            root.clone()
+        } else {
+            format!(r"{}\{}", root, project_subdir)
+        };
+        let project_uri = Self::file_uri(&project_root);
+
         let module_name = if package_name.is_empty() {
-            std::path::Path::new(&root)
+            std::path::Path::new(&project_root)
                 .file_name()
                 .map(|n| n.to_string_lossy().to_string())
                 .unwrap_or_else(|| "unknown".to_string())
@@ -125,7 +131,7 @@ impl zed::Extension for CangjieExtension {
         });
 
         let mut multi_module = serde_json::Map::new();
-        multi_module.insert(root_uri, module);
+        multi_module.insert(project_uri, module);
 
         Ok(Some(serde_json::json!({
             "multiModuleOption": multi_module,
