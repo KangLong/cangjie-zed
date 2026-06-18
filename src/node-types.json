@@ -1013,6 +1013,10 @@
           "named": true
         },
         {
+          "type": "blockComment",
+          "named": true
+        },
+        {
           "type": "booleanLiteral",
           "named": true
         },
@@ -1050,6 +1054,10 @@
         },
         {
           "type": "lambdaExpression",
+          "named": true
+        },
+        {
+          "type": "lineComment",
           "named": true
         },
         {
@@ -3218,6 +3226,10 @@
           "named": true
         },
         {
+          "type": "blockComment",
+          "named": true
+        },
+        {
           "type": "booleanLiteral",
           "named": true
         },
@@ -3259,6 +3271,10 @@
         },
         {
           "type": "lambdaParameters",
+          "named": true
+        },
+        {
+          "type": "lineComment",
           "named": true
         },
         {
@@ -3814,6 +3830,10 @@
           "named": true
         },
         {
+          "type": "blockComment",
+          "named": true
+        },
+        {
           "type": "booleanLiteral",
           "named": true
         },
@@ -3859,6 +3879,10 @@
         },
         {
           "type": "lambdaExpression",
+          "named": true
+        },
+        {
+          "type": "lineComment",
           "named": true
         },
         {
@@ -3981,6 +4005,10 @@
           "named": true
         },
         {
+          "type": "blockComment",
+          "named": true
+        },
+        {
           "type": "booleanLiteral",
           "named": true
         },
@@ -4018,6 +4046,10 @@
         },
         {
           "type": "lambdaExpression",
+          "named": true
+        },
+        {
+          "type": "lineComment",
           "named": true
         },
         {
@@ -7081,6 +7113,10 @@
           "named": true
         },
         {
+          "type": "blockComment",
+          "named": true
+        },
+        {
           "type": "booleanLiteral",
           "named": true
         },
@@ -7122,6 +7158,10 @@
         },
         {
           "type": "lambdaParameters",
+          "named": true
+        },
+        {
+          "type": "lineComment",
           "named": true
         },
         {
@@ -7209,6 +7249,10 @@
       "required": false,
       "types": [
         {
+          "type": "blockComment",
+          "named": true
+        },
+        {
           "type": "classDefinition",
           "named": true
         },
@@ -7234,6 +7278,10 @@
         },
         {
           "type": "interfaceDefinition",
+          "named": true
+        },
+        {
+          "type": "lineComment",
           "named": true
         },
         {
@@ -9022,8 +9070,7 @@
   },
   {
     "type": "blockComment",
-    "named": true,
-    "extra": true
+    "named": true
   },
   {
     "type": "booleanLiteral",
@@ -9155,8 +9202,7 @@
   },
   {
     "type": "lineComment",
-    "named": true,
-    "extra": true
+    "named": true
   },
   {
     "type": "macro",

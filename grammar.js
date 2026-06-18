@@ -52,8 +52,6 @@ const M = {
 
     extras: $ => [
         /\s/,  //空白
-        $.lineComment,
-        $.blockComment,
     ],
 
     word: $ => $.identifier,
@@ -256,6 +254,8 @@ const M = {
         _expressionOrDeclarations: $ => seq(
             optional(seq($._expressionOrDeclarations, repeat(terminator))),
             choice(
+                $.lineComment,
+                $.blockComment,
                 $.variableDeclaration,
                 $.functionDefinition,
                 $.assignmentExpression,
@@ -265,6 +265,8 @@ const M = {
 
         //top level objects
         _topLevelObject: $ => choice(
+            $.lineComment,
+            $.blockComment,
             $.variableDeclaration,
             $.functionDefinition,
             $.classDefinition,
