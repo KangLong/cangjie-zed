@@ -1488,14 +1488,6 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "lineComment"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "blockComment"
-            },
-            {
-              "type": "SYMBOL",
               "name": "variableDeclaration"
             },
             {
@@ -1517,14 +1509,6 @@
     "_topLevelObject": {
       "type": "CHOICE",
       "members": [
-        {
-          "type": "SYMBOL",
-          "name": "lineComment"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "blockComment"
-        },
         {
           "type": "SYMBOL",
           "name": "variableDeclaration"
@@ -8750,109 +8734,104 @@
       ]
     },
     "_lineStringLiteral": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "'"
-            },
-            {
-              "type": "REPEAT",
-              "content": {
-                "type": "CHOICE",
-                "members": [
-                  {
-                    "type": "PATTERN",
-                    "value": "[^'\\\\]"
-                  },
-                  {
-                    "type": "SEQ",
-                    "members": [
-                      {
-                        "type": "STRING",
-                        "value": "\\u{"
-                      },
-                      {
-                        "type": "PATTERN",
-                        "value": "[0-9a-fA-F]{1,8}"
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "}"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "PATTERN",
-                    "value": "\\\\[tbrn'\"\\\\fv0\\$]"
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "inlineExpression"
-                  }
-                ]
+      "type": "TOKEN",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "'"
+              },
+              {
+                "type": "REPEAT",
+                "content": {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "PATTERN",
+                      "value": "[^'\\\\]"
+                    },
+                    {
+                      "type": "SEQ",
+                      "members": [
+                        {
+                          "type": "STRING",
+                          "value": "\\u{"
+                        },
+                        {
+                          "type": "PATTERN",
+                          "value": "[0-9a-fA-F]{1,8}"
+                        },
+                        {
+                          "type": "STRING",
+                          "value": "}"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "PATTERN",
+                      "value": "\\\\[tbrn'\"\\\\fv0\\$]"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "STRING",
+                "value": "'"
               }
-            },
-            {
-              "type": "STRING",
-              "value": "'"
-            }
-          ]
-        },
-        {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "\""
-            },
-            {
-              "type": "REPEAT",
-              "content": {
-                "type": "CHOICE",
-                "members": [
-                  {
-                    "type": "PATTERN",
-                    "value": "[^\"\\\\]"
-                  },
-                  {
-                    "type": "SEQ",
-                    "members": [
-                      {
-                        "type": "STRING",
-                        "value": "\\u{"
-                      },
-                      {
-                        "type": "PATTERN",
-                        "value": "[0-9a-fA-F]{1,8}"
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "}"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "PATTERN",
-                    "value": "\\\\[tbrn'\"\\\\fv0\\$]"
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "inlineExpression"
-                  }
-                ]
+            ]
+          },
+          {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "\""
+              },
+              {
+                "type": "REPEAT",
+                "content": {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "PATTERN",
+                      "value": "[^\"\\\\]"
+                    },
+                    {
+                      "type": "SEQ",
+                      "members": [
+                        {
+                          "type": "STRING",
+                          "value": "\\u{"
+                        },
+                        {
+                          "type": "PATTERN",
+                          "value": "[0-9a-fA-F]{1,8}"
+                        },
+                        {
+                          "type": "STRING",
+                          "value": "}"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "PATTERN",
+                      "value": "\\\\[tbrn'\"\\\\fv0\\$]"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "STRING",
+                "value": "\""
               }
-            },
-            {
-              "type": "STRING",
-              "value": "\""
-            }
-          ]
-        }
-      ]
+            ]
+          }
+        ]
+      }
     },
     "inlineExpression": {
       "type": "SEQ",
@@ -8891,63 +8870,62 @@
       ]
     },
     "_multiLineStringLiteral": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "\"\"\""
-            },
-            {
-              "type": "PATTERN",
-              "value": "\\r?\\n"
-            }
-          ]
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "CHOICE",
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SEQ",
             "members": [
               {
-                "type": "PATTERN",
-                "value": "[^\\\\]"
-              },
-              {
-                "type": "SEQ",
-                "members": [
-                  {
-                    "type": "STRING",
-                    "value": "\\u{"
-                  },
-                  {
-                    "type": "PATTERN",
-                    "value": "[0-9a-fA-F]{1,8}"
-                  },
-                  {
-                    "type": "STRING",
-                    "value": "}"
-                  }
-                ]
+                "type": "STRING",
+                "value": "\"\"\""
               },
               {
                 "type": "PATTERN",
-                "value": "\\\\[tbrn'\"\\\\fv0\\$]"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "inMultiLineStringExpression"
+                "value": "\\r?\\n"
               }
             ]
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PATTERN",
+                  "value": "[^\\\\]"
+                },
+                {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": "\\u{"
+                    },
+                    {
+                      "type": "PATTERN",
+                      "value": "[0-9a-fA-F]{1,8}"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "}"
+                    }
+                  ]
+                },
+                {
+                  "type": "PATTERN",
+                  "value": "\\\\[tbrn'\"\\\\fv0\\$]"
+                }
+              ]
+            }
+          },
+          {
+            "type": "STRING",
+            "value": "\"\"\""
           }
-        },
-        {
-          "type": "STRING",
-          "value": "\"\"\""
-        }
-      ]
+        ]
+      }
     },
     "inMultiLineStringExpression": {
       "type": "SEQ",
@@ -9050,6 +9028,14 @@
     {
       "type": "PATTERN",
       "value": "\\s"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "lineComment"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "blockComment"
     }
   ],
   "conflicts": [
