@@ -1,4 +1,4 @@
-; Cangjie highlights - named nodes + keywords A
+; Cangjie highlights - named nodes + keywords A + keywords B1
 (lineComment) @comment
 (blockComment) @comment
 (stringLiteral) @string
@@ -75,3 +75,9 @@
 "static" @keyword
 "get" @keyword
 "set" @keyword
+"if" @keyword
+"else" @keyword
+"for" @keyword
+"in" @keyword
+"do" @keyword
+"while" @keyword
