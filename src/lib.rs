@@ -15,11 +15,7 @@ impl zed::Extension for CangjieExtension {
         _language_server_id: &LanguageServerId,
         worktree: &Worktree,
     ) -> Result<Command> {
-        let server_path = if let Some(path) = worktree.which("LSPServer") {
-            path
-        } else {
-            format!(r#"{}\tools\bin\LSPServer.exe"#, SDK_PATH)
-        };
+        let server_path = format!(r#"{}\tools\bin\LSPServer.exe"#, SDK_PATH);
 
         let mut env = worktree.shell_env();
 
