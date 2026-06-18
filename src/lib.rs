@@ -66,15 +66,9 @@ impl zed::Extension for CangjieExtension {
         }
         env.push(("PATH".to_string(), new_path));
 
-        let log_path = worktree.root_path().replace('\\', "/") + "/.cangjie-lsp";
         Ok(Command {
             command: server_path,
-            args: vec![
-                "src".to_string(),
-                "--disableAutoImport".to_string(),
-                "--enable-log=true".to_string(),
-                format!("--log-path={}", log_path),
-            ],
+            args: vec!["src".to_string(), "--disableAutoImport".to_string()],
             env,
         })
     }
