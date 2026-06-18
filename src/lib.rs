@@ -1,7 +1,7 @@
 use zed_extension_api::{self as zed, Command, LanguageServerId, Result, Worktree};
 use zed::serde_json;
 
-const SDK_PATH: &str = r#"G:\Work\DevTools\SDK\cj\cangjie-sdk-windows-x64-1.1.3\cangjie"#;
+const SDK_PATH: &str = r#"G:\Work\DevTools\SDK\cj\cangjie-sdk-windows-x64-1.0.5\cangjie"#;
 
 struct CangjieExtension;
 
