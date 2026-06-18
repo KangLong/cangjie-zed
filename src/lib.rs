@@ -28,6 +28,24 @@ impl zed::Extension for CangjieExtension {
     ) -> Result<Command> {
         let server_path = format!(r#"{}\tools\bin\LSPServer.exe"#, SDK_PATH);
 
+        // Detect project subdirectory if cjpm.toml is not in root
+        let project_dir = worktree.root_path();
+        let mut found_cjpm = worktree.read_text_file("cjpm.toml").is_ok();
+        let mut subdir = String::new();
+        if !found_cjpm {
+            for dir in &["gamecrit-server", "server", "src"] {
+                if worktree.read_text_file(&format!("{}/cjpm.toml", dir)).is_ok() {
+                    subdir = dir.to_string();
+                    break;
+                }
+            }
+        }
+
+        let mut args = vec!["src".to_string(), "--disableAutoImport".to_string()];
+        if !subdir.is_empty() {
+            args.push(subdir);
+        }
+
         let mut env = worktree.shell_env();
         env.push(("CANGJIE_HOME".to_string(), SDK_PATH.to_string()));
 
@@ -66,7 +84,7 @@ impl zed::Extension for CangjieExtension {
 
         Ok(Command {
             command: server_path,
-            args: vec!["src".to_string(), "--disableAutoImport".to_string()],
+            args,
             env,
         })
     }
