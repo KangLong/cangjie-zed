@@ -1,0 +1,10 @@
+G:\Work\Projects\Self\cangjie-zed\target\debug\deps\foldhash-860ea31daecb2567.d: G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\foldhash-0.1.5\src\lib.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\foldhash-0.1.5\src\fast.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\foldhash-0.1.5\src\quality.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\foldhash-0.1.5\src\seed.rs
+
+G:\Work\Projects\Self\cangjie-zed\target\debug\deps\libfoldhash-860ea31daecb2567.rlib: G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\foldhash-0.1.5\src\lib.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\foldhash-0.1.5\src\fast.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\foldhash-0.1.5\src\quality.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\foldhash-0.1.5\src\seed.rs
+
+G:\Work\Projects\Self\cangjie-zed\target\debug\deps\libfoldhash-860ea31daecb2567.rmeta: G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\foldhash-0.1.5\src\lib.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\foldhash-0.1.5\src\fast.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\foldhash-0.1.5\src\quality.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\foldhash-0.1.5\src\seed.rs
+
+G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\foldhash-0.1.5\src\lib.rs:
+G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\foldhash-0.1.5\src\fast.rs:
+G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\foldhash-0.1.5\src\quality.rs:
+G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\foldhash-0.1.5\src\seed.rs:
