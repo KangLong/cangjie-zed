@@ -16,7 +16,12 @@
   (atomicVariable (varBindingPattern) @function.call)
   (callSuffix))
 (fieldAccess
-  (atomicVariable (varBindingPattern) @function.call))
+  (atomicVariable (varBindingPattern) @property))
+(postfixExpression
+  (postfixExpression
+    (fieldAccess
+      (atomicVariable (varBindingPattern) @function.call)))
+  (callSuffix))
 (className) @type
 (structName) @type
 (enumName) @type
