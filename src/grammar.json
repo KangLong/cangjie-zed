@@ -1488,6 +1488,14 @@
           "members": [
             {
               "type": "SYMBOL",
+              "name": "lineComment"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "blockComment"
+            },
+            {
+              "type": "SYMBOL",
               "name": "variableDeclaration"
             },
             {
@@ -1509,6 +1517,14 @@
     "_topLevelObject": {
       "type": "CHOICE",
       "members": [
+        {
+          "type": "SYMBOL",
+          "name": "lineComment"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "blockComment"
+        },
         {
           "type": "SYMBOL",
           "name": "variableDeclaration"
@@ -9034,14 +9050,6 @@
     {
       "type": "PATTERN",
       "value": "\\s"
-    },
-    {
-      "type": "SYMBOL",
-      "name": "lineComment"
-    },
-    {
-      "type": "SYMBOL",
-      "name": "blockComment"
     }
   ],
   "conflicts": [
