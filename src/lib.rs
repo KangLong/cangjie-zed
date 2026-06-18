@@ -5,6 +5,39 @@ const SDK_PATH: &str = r#"G:\Work\DevTools\SDK\cj\cangjie-sdk-windows-x64-1.1.3\
 
 struct CangjieExtension;
 
+impl CangjieExtension {
+    fn parse_cjpm_toml(&self, text: &str) -> (String, serde_json::Value) {
+        let mut name = String::new();
+        let mut in_package = false;
+        for line in text.lines() {
+            let trimmed = line.trim();
+            if trimmed == "[package]" {
+                in_package = true;
+                continue;
+            }
+            if trimmed.starts_with('[') && trimmed.ends_with(']') {
+                in_package = false;
+                continue;
+            }
+            if in_package {
+                if let Some(val) = trimmed.strip_prefix("name = ").or_else(|| trimmed.strip_prefix(r#"name="#)) {
+                    name = val.trim_matches('"').to_string();
+                }
+            }
+        }
+        (name, serde_json::Value::Null)
+    }
+
+    fn file_uri(path: &str) -> String {
+        let normalized = path.replace('\\', "/");
+        if normalized.starts_with("/") {
+            format!("file://{}", normalized)
+        } else {
+            format!("file:///{}", normalized)
+        }
+    }
+}
+
 impl zed::Extension for CangjieExtension {
     fn new() -> Self {
         Self
@@ -18,7 +51,6 @@ impl zed::Extension for CangjieExtension {
         let server_path = format!(r#"{}\tools\bin\LSPServer.exe"#, SDK_PATH);
 
         let mut env = worktree.shell_env();
-
         env.push(("CANGJIE_HOME".to_string(), SDK_PATH.to_string()));
 
         let cangjie_paths = vec![
@@ -40,11 +72,9 @@ impl zed::Extension for CangjieExtension {
         }
         env.push(("PATH".to_string(), new_path));
 
-        let server_args = vec!["src".to_string(), "--disableAutoImport".to_string()];
-
         Ok(Command {
             command: server_path,
-            args: server_args,
+            args: vec!["src".to_string(), "--disableAutoImport".to_string()],
             env,
         })
     }
@@ -52,10 +82,53 @@ impl zed::Extension for CangjieExtension {
     fn language_server_initialization_options(
         &mut self,
         _language_server_id: &LanguageServerId,
-        _worktree: &Worktree,
+        worktree: &Worktree,
     ) -> Result<Option<serde_json::Value>> {
+        let root = worktree.root_path();
+        let root_uri = Self::file_uri(&root);
+
+        // Try to read cjpm.toml for package name
+        let package_name = match worktree.read_text_file("cjpm.toml") {
+            Ok(content) => {
+                let mut name = String::new();
+                let mut in_package = false;
+                for line in content.lines() {
+                    let t = line.trim();
+                    if t == "[package]" { in_package = true; continue; }
+                    if t.starts_with('[') && t.ends_with(']') { in_package = false; continue; }
+                    if in_package {
+                        if let Some(val) = t.strip_prefix("name = ") {
+                            name = val.trim_matches('"').to_string();
+                        }
+                    }
+                }
+                name
+            }
+            Err(_) => String::new(),
+        };
+
+        let module_name = if package_name.is_empty() {
+            std::path::Path::new(&root)
+                .file_name()
+                .map(|n| n.to_string_lossy().to_string())
+                .unwrap_or_else(|| "unknown".to_string())
+        } else {
+            package_name
+        };
+
+        let module = serde_json::json!({
+            "moduleNameKeyInModuleJson": module_name,
+            "LSP_REQUIRES": {},
+            "LSP_PACKAGE_REQUIRES": {},
+            "LSP_PATH_OPTION": [],
+            "LSP_PACKAGE_OPTION": []
+        });
+
+        let mut multi_module = serde_json::Map::new();
+        multi_module.insert(root_uri, module);
+
         Ok(Some(serde_json::json!({
-            "multiModuleOption": {},
+            "multiModuleOption": multi_module,
             "conditionCompileOption": {},
             "singleConditionCompileOption": {},
             "conditionCompilePaths": [],
