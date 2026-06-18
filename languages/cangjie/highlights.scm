@@ -147,3 +147,4 @@
 "}" @punctuation.bracket
 "[" @punctuation.bracket
 "]" @punctuation.bracket
+(inlineExpression) @embedded
