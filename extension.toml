@@ -9,7 +9,3 @@ repository = "https://github.com/KangLong/cangjie-zed"
 [grammars.cangjie]
 repository = "https://github.com/KangLong/cangjie-zed"
 rev = "master"
-
-[language_servers.cangjie-lsp]
-name = "Cangjie LSP"
-languages = ["Cangjie"]
