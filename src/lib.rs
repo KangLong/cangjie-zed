@@ -1,13 +1,11 @@
-use zed_extension_api::{self as zed, Command, LanguageServerId, Result, Worktree};
 use zed::serde_json;
+use zed_extension_api::{self as zed, Command, LanguageServerId, Result, Worktree};
 
-const SDK_PATH: &str = r#"G:\Work\DevTools\SDK\cj\cangjie-sdk-windows-x64-1.0.5\cangjie"#;
+const SDK_PATH: &str = r#"G:\Work\DevTools\SDK\cj\cangjie-sdk-windows-x64-1.2.0-alpha\cangjie"#;
 
 struct CangjieExtension;
 
 impl CangjieExtension {
-
-
     fn file_uri(path: &str) -> String {
         let normalized = path.replace('\\', "/");
         if normalized.starts_with("/") {
@@ -88,8 +86,14 @@ impl zed::Extension for CangjieExtension {
                 let mut in_package = false;
                 for line in content.lines() {
                     let t = line.trim();
-                    if t == "[package]" { in_package = true; continue; }
-                    if t.starts_with('[') && t.ends_with(']') { in_package = false; continue; }
+                    if t == "[package]" {
+                        in_package = true;
+                        continue;
+                    }
+                    if t.starts_with('[') && t.ends_with(']') {
+                        in_package = false;
+                        continue;
+                    }
                     if in_package {
                         if let Some(val) = t.strip_prefix("name = ") {
                             name = val.trim_matches('"').to_string();
