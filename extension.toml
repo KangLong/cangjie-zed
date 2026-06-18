@@ -13,3 +13,4 @@ rev = "master"
 [language_servers.cangjie-lsp]
 name = "Cangjie LSP"
 languages = ["Cangjie"]
+language_ids = { "Cangjie" = "Cangjie" }

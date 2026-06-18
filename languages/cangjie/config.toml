@@ -4,6 +4,3 @@ path_suffixes = ["cj"]
 line_comments = ["// "]
 tab_size = 4
 hard_tabs = false
-
-[language_servers.cangjie-lsp]
-language_id = "Cangjie"
