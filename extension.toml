@@ -1,0 +1,11 @@
+id = "cangjie"
+name = "Cangjie"
+version = "0.1.0"
+schema_version = 1
+authors = ["Cangjie Community"]
+description = "Cangjie programming language support for Zed"
+repository = "https://github.com/your-username/cangjie-zed"
+
+[grammars.cangjie]
+repository = "file:///g:/Work/Projects/Self/cangjie-zed"
+rev = "master"
