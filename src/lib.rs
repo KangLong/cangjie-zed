@@ -41,9 +41,6 @@ impl zed::Extension for CangjieExtension {
         }
 
         let mut args = vec!["src".to_string(), "--disableAutoImport".to_string()];
-        if !subdir.is_empty() {
-            args.push(subdir);
-        }
 
         let mut env = worktree.shell_env();
         env.push(("CANGJIE_HOME".to_string(), SDK_PATH.to_string()));
