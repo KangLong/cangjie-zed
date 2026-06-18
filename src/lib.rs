@@ -6,27 +6,7 @@ const SDK_PATH: &str = r#"G:\Work\DevTools\SDK\cj\cangjie-sdk-windows-x64-1.1.3\
 struct CangjieExtension;
 
 impl CangjieExtension {
-    fn parse_cjpm_toml(&self, text: &str) -> (String, serde_json::Value) {
-        let mut name = String::new();
-        let mut in_package = false;
-        for line in text.lines() {
-            let trimmed = line.trim();
-            if trimmed == "[package]" {
-                in_package = true;
-                continue;
-            }
-            if trimmed.starts_with('[') && trimmed.ends_with(']') {
-                in_package = false;
-                continue;
-            }
-            if in_package {
-                if let Some(val) = trimmed.strip_prefix("name = ").or_else(|| trimmed.strip_prefix(r#"name="#)) {
-                    name = val.trim_matches('"').to_string();
-                }
-            }
-        }
-        (name, serde_json::Value::Null)
-    }
+
 
     fn file_uri(path: &str) -> String {
         let normalized = path.replace('\\', "/");
@@ -72,9 +52,15 @@ impl zed::Extension for CangjieExtension {
         }
         env.push(("PATH".to_string(), new_path));
 
+        let log_path = worktree.root_path().replace('\\', "/") + "/.cangjie-lsp";
         Ok(Command {
             command: server_path,
-            args: vec!["src".to_string(), "--disableAutoImport".to_string()],
+            args: vec![
+                "src".to_string(),
+                "--disableAutoImport".to_string(),
+                "--enable-log=true".to_string(),
+                format!("--log-path={}", log_path),
+            ],
             env,
         })
     }
