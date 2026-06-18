@@ -15,9 +15,6 @@
 (postfixExpression
   (atomicVariable (varBindingPattern) @function.call)
   (callSuffix))
-(postfixExpression
-  (atomicVariable (varBindingPattern) @function.call)
-  (fieldAccess))
 (fieldAccess
   (atomicVariable (varBindingPattern) @property))
 (className) @type
