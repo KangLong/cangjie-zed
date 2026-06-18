@@ -12,6 +12,11 @@
 (thisSuperExpression) @variable.builtin
 (funcName) @function
 (callSuffix) @function.call
+(postfixExpression
+  (atomicVariable) @function.call
+  (callSuffix))
+(fieldAccess
+  (atomicVariable) @function.call)
 (className) @type
 (structName) @type
 (enumName) @type
