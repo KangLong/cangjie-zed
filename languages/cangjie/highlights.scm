@@ -13,13 +13,13 @@
 (funcName) @function
 (callSuffix) @function.call
 (postfixExpression
-  (atomicVariable) @function.call
+  (atomicVariable (varBindingPattern) @function.call)
   (callSuffix))
 (postfixExpression
-  (atomicVariable) @function.call
+  (atomicVariable (varBindingPattern) @function.call)
   (fieldAccess))
 (fieldAccess
-  (atomicVariable) @function.call)
+  (atomicVariable (varBindingPattern) @function.call))
 (className) @type
 (structName) @type
 (enumName) @type
