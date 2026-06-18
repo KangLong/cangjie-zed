@@ -1,126 +1,72 @@
-; Cangjie syntax highlighting for Zed
-
-; ============================================
-; Comments
-; ============================================
+; Cangjie highlights
 (lineComment) @comment
 (blockComment) @comment
-
-; ============================================
-; Literals
-; ============================================
 (stringLiteral) @string
 (integerLiteral) @number
 (floatLiteral) @number.float
-(runeLiteral) @string.special
 (booleanLiteral) @boolean
 (unitLiteral) @constant.builtin
-(wildcardPattern) @constant.builtin
-
-; ============================================
-; Variables & Parameters
-; ============================================
 (varBindingPattern) @variable
-(parameter
-  paraName: (identifier) @variable.parameter)
-(thisSuperExpression) @variable.builtin
-
-; ============================================
-; Functions
-; ============================================
 (funcName) @function
-(callSuffix) @function.call
-
-; ============================================
-; Types (user-defined)
-; ============================================
 (className) @type
 (structName) @type
 (enumName) @type
 (interfaceName) @type
 (typeAliasName) @type
 (propertyName) @property
-(returnType
-  (_) @type)
-
-; ============================================
-; Modifiers → @keyword
-; ============================================
+(thisSuperExpression) @variable.builtin
+(wildcardPattern) @constant.builtin
 (modifiers) @keyword
-
-; ============================================
-; Keyword tokens (anonymous)
-; ============================================
-[
-  "package" "import" "as"
-  "class" "struct" "enum" "interface"
-  "func" "main"
-  "let" "var" "const"
-  "init" "prop"
-  "operator" "macro" "quote" "extend"
-  "type" "foreign" "inout" "where"
-  "mut" "unsafe" "spawn" "synchronized"
-  "open" "override" "redef" "sealed" "abstract"
-  "public" "private" "protected" "static" "internal"
-  "get" "set"
-] @keyword
-
-; ============================================
-; Control flow keywords
-; ============================================
-[
-  "if" "else"
-  "for" "in" "do" "while"
-  "match" "case"
-  "try" "catch" "finally" "throw"
-  "return" "break" "continue"
-  "is" "as"
-  "super" "this"
-] @keyword
-
-; ============================================
-; Boolean literals
-; ============================================
-["true" "false"] @boolean
-
-; ============================================
-; Built-in types (named nodes from grammar aliases)
-; ============================================
-[
-  (String)
-  (Int8) (Int16) (Int32) (Int64) (IntNative)
-  (UInt8) (UInt16) (UInt32) (UInt64) (UIntNative)
-  (Float16) (Float32) (Float64)
-  (Rune) (Bool) (Nothing) (Unit) (Thistype)
-] @type.builtin
-
-; ============================================
-; Operators
-; ============================================
-[
-  "+" "-" "*" "/" "%" "**"
-  "++" "--"
-  "==" "!=" "<" ">" "<=" ">="
-  "!" "~"
-  "&&" "||"
-  "&" "|" "^" "<<" ">>"
-  "=" "+=" "-=" "*=" "/=" "%="
-  "**=" "&=" "|=" "^=" "<<=" ">>="
-  "&&=" "||="
-  "?" "??" "|>" "~>"
-  ".." "..=" "..."
-  "->" "<-" "=>" "<:"
-  "@"
-] @operator
-
-; ============================================
-; Punctuation
-; ============================================
-[ ";" "," "." ] @punctuation.delimiter
-[ "(" ")" "{" "}" "[" "]" ] @punctuation.bracket
-
-; ============================================
-; String interpolation
-; ============================================
-(inlineExpression) @embedded
-(inMultiLineStringExpression) @embedded
+"package" @keyword
+"import" @keyword
+"class" @keyword
+"struct" @keyword
+"enum" @keyword
+"interface" @keyword
+"func" @keyword
+"main" @keyword
+"let" @keyword
+"var" @keyword
+"const" @keyword
+"if" @keyword
+"else" @keyword
+"for" @keyword
+"in" @keyword
+"do" @keyword
+"while" @keyword
+"match" @keyword
+"case" @keyword
+"try" @keyword
+"catch" @keyword
+"finally" @keyword
+"throw" @keyword
+"return" @keyword
+"break" @keyword
+"continue" @keyword
+"is" @keyword
+"as" @keyword
+"super" @keyword
+"this" @keyword
+"true" @keyword
+"false" @keyword
+"init" @keyword
+"extend" @keyword
+"public" @keyword
+"private" @keyword
+"protected" @keyword
+"static" @keyword
+"mut" @keyword
+"override" @keyword
+"operator" @keyword
+"where" @keyword
+"type" @keyword
+"macro" @keyword
+"spawn" @keyword
+"unsafe" @keyword
+"prop" @keyword
+"foreign" @keyword
+"inout" @keyword
+"open" @keyword
+"redef" @keyword
+"sealed" @keyword
+"abstract" @keyword
