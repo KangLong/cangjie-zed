@@ -121,7 +121,9 @@ impl zed::Extension for CangjieExtension {
             "LSP_REQUIRES": {},
             "LSP_PACKAGE_REQUIRES": {},
             "LSP_PATH_OPTION": [],
-            "LSP_PACKAGE_OPTION": []
+            "LSP_PACKAGE_OPTION": [],
+            "LSP_JAVA_REQUIRES": [],
+            "LSP_C_REQUIRES": []
         });
 
         let mut multi_module = serde_json::Map::new();
@@ -132,7 +134,9 @@ impl zed::Extension for CangjieExtension {
             "conditionCompileOption": {},
             "singleConditionCompileOption": {},
             "conditionCompilePaths": [],
-            "targetLib": ""
+            "targetLib": "",
+            "requirePath": "",
+            "newRequirePath": ""
         })))
     }
 }
