@@ -29,7 +29,6 @@ impl zed::Extension for CangjieExtension {
         let server_path = format!(r#"{}\tools\bin\LSPServer.exe"#, SDK_PATH);
 
         // Detect project subdirectory if cjpm.toml is not in root
-        let project_dir = worktree.root_path();
         let mut found_cjpm = worktree.read_text_file("cjpm.toml").is_ok();
         let mut subdir = String::new();
         if !found_cjpm {
