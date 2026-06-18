@@ -144,4 +144,3 @@
 "|>" @operator
 "~>" @operator
 "@" @operator
-(inlineExpression) @embedded
