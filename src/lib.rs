@@ -25,9 +25,11 @@ impl zed::Extension for CangjieExtension {
         // Set CANGJIE_HOME so LSPServer can find the SDK
         env.push(("CANGJIE_HOME".to_string(), SDK_PATH.to_string()));
 
-        // Prepend Cangjie runtime and tool paths to PATH
+        // Prepend Cangjie runtime and tool paths to PATH (matching envsetup.bat)
         let cangjie_paths = vec![
             format!(r#"{}\runtime\lib\windows_x86_64_cjnative"#, SDK_PATH),
+            format!(r#"{}\lib\windows_x86_64_cjnative"#, SDK_PATH),
+            format!(r#"{}\bin"#, SDK_PATH),
             format!(r#"{}\tools\bin"#, SDK_PATH),
             format!(r#"{}\tools\lib"#, SDK_PATH),
         ];
