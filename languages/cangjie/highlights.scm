@@ -19,7 +19,7 @@
   (atomicVariable (varBindingPattern) @function.call)
   (fieldAccess))
 (fieldAccess
-  (atomicVariable (varBindingPattern) @function.call))
+  (atomicVariable (varBindingPattern) @property))
 (className) @type
 (structName) @type
 (enumName) @type
