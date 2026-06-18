@@ -93,3 +93,10 @@
 "is" @keyword
 "super" @keyword
 "this" @keyword
+"+" @operator
+"-" @operator
+"*" @operator
+"/" @operator
+"%" @operator
+"++" @operator
+"--" @operator
