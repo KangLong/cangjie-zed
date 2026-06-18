@@ -45,9 +45,12 @@ impl zed::Extension for CangjieExtension {
         }
         env.push(("PATH".to_string(), new_path));
 
+        // LSPServer args: project type "src" and disable auto import
+        let server_args = vec!["src".to_string(), "--disableAutoImport".to_string()];
+
         Ok(Command {
             command: server_path,
-            args: vec![],
+            args: server_args,
             env,
         })
     }
