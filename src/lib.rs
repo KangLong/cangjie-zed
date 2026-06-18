@@ -144,6 +144,9 @@ impl zed::Extension for CangjieExtension {
             package_name
         };
 
+        let src_path = format!(r"{}\src", project_root);
+        let require_path = format!("{};", src_path);
+
         let module = serde_json::json!({
             "moduleNameKeyInModuleJson": module_name,
             "LSP_REQUIRES": {},
@@ -163,8 +166,8 @@ impl zed::Extension for CangjieExtension {
             "singleConditionCompileOption": {},
             "conditionCompilePaths": [],
             "targetLib": "",
-            "requirePath": "",
-            "newRequirePath": ""
+            "requirePath": require_path,
+            "newRequirePath": require_path
         })))
     }
 }
