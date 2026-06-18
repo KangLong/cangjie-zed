@@ -1,4 +1,5 @@
 use zed_extension_api::{self as zed, Command, LanguageServerId, Result, Worktree};
+use zed::serde_json;
 
 const SDK_PATH: &str = r#"G:\Work\DevTools\SDK\cj\cangjie"#;
 
