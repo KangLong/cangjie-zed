@@ -137,4 +137,11 @@
 "]" @punctuation.bracket
 "?" @operator
 "??" @operator
-".." @operator
+"->" @operator
+"<-" @operator
+"=>" @operator
+"<:" @operator
+"|>" @operator
+"~>" @operator
+"@" @operator
+(inlineExpression) @embedded
