@@ -145,4 +145,3 @@
 "~>" @operator
 "@" @operator
 (inlineExpression) @embedded
-[ ".." "..=" "..." ] @operator
