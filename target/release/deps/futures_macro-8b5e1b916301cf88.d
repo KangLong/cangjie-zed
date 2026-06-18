@@ -1,9 +1,0 @@
-G:\Work\Projects\Self\cangjie-zed\target\release\deps\futures_macro-8b5e1b916301cf88.d: G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\futures-macro-0.3.32\src\lib.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\futures-macro-0.3.32\src\executor.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\futures-macro-0.3.32\src\join.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\futures-macro-0.3.32\src\select.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\futures-macro-0.3.32\src\stream_select.rs
-
-G:\Work\Projects\Self\cangjie-zed\target\release\deps\futures_macro-8b5e1b916301cf88.dll: G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\futures-macro-0.3.32\src\lib.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\futures-macro-0.3.32\src\executor.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\futures-macro-0.3.32\src\join.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\futures-macro-0.3.32\src\select.rs G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\futures-macro-0.3.32\src\stream_select.rs
-
-G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\futures-macro-0.3.32\src\lib.rs:
-G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\futures-macro-0.3.32\src\executor.rs:
-G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\futures-macro-0.3.32\src\join.rs:
-G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\futures-macro-0.3.32\src\select.rs:
-G:\Work\DevTools\SDK\rust\CargoHome\registry\src\index.crates.io-1949cf8c6b5b557f\futures-macro-0.3.32\src\stream_select.rs:
