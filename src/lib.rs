@@ -28,7 +28,12 @@ impl zed::Extension for CangjieExtension {
     ) -> Result<Command> {
         let server_path = format!(r#"{}\tools\bin\LSPServer.exe"#, SDK_PATH);
 
-        let mut args = vec!["src".to_string(), "--disableAutoImport".to_string()];
+        let mut args = vec![
+            "src".to_string(),
+            "--disableAutoImport".to_string(),
+            "--enable-log=true".to_string(),
+            format!("--log-path={}", worktree.root_path().replace('\\', "/")),
+        ];
 
         let mut env = worktree.shell_env();
         env.push(("CANGJIE_HOME".to_string(), SDK_PATH.to_string()));
