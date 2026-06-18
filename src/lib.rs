@@ -33,6 +33,20 @@ impl zed::Extension for CangjieExtension {
         let mut env = worktree.shell_env();
         env.push(("CANGJIE_HOME".to_string(), SDK_PATH.to_string()));
 
+        // Inherit CANGJIE_STDX_PATH from worktree shell env if set
+        let mut has_stdx = false;
+        for (k, v) in &env {
+            if k == "CANGJIE_STDX_PATH" {
+                has_stdx = true;
+                break;
+            }
+        }
+        if !has_stdx {
+            // Set a default path if not already set
+            let stdx_path = format!(r#"{}\..\..\windows_x86_64_cjnative\static\stdx"#, SDK_PATH);
+            env.push(("CANGJIE_STDX_PATH".to_string(), stdx_path));
+        }
+
         let cangjie_paths = vec![
             format!(r#"{}\runtime\lib\windows_x86_64_cjnative"#, SDK_PATH),
             format!(r#"{}\lib\windows_x86_64_cjnative"#, SDK_PATH),
