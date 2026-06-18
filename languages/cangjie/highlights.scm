@@ -87,3 +87,9 @@
 "catch" @keyword
 "finally" @keyword
 "throw" @keyword
+"return" @keyword
+"break" @keyword
+"continue" @keyword
+"is" @keyword
+"super" @keyword
+"this" @keyword
