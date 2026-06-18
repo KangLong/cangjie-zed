@@ -28,12 +28,29 @@ impl zed::Extension for CangjieExtension {
     ) -> Result<Command> {
         let server_path = format!(r#"{}\tools\bin\LSPServer.exe"#, SDK_PATH);
 
+        // Detect project subdirectory and pass as arg
+        let project_arg = {
+            let mut dir = String::new();
+            for candidate in &["cjpm.toml", "gamecrit-server/cjpm.toml"] {
+                if worktree.read_text_file(candidate).is_ok() {
+                    if let Some(idx) = candidate.rfind('/') {
+                        dir = candidate[..idx].to_string();
+                    }
+                    break;
+                }
+            }
+            dir
+        };
+
         let mut args = vec![
             "src".to_string(),
             "--disableAutoImport".to_string(),
             "--enable-log=true".to_string(),
             format!("--log-path={}", worktree.root_path().replace('\\', "/")),
         ];
+        if !project_arg.is_empty() {
+            args.push(project_arg);
+        }
 
         let mut env = worktree.shell_env();
         env.push(("CANGJIE_HOME".to_string(), SDK_PATH.to_string()));
