@@ -81,3 +81,9 @@
 "in" @keyword
 "do" @keyword
 "while" @keyword
+"match" @keyword
+"case" @keyword
+"try" @keyword
+"catch" @keyword
+"finally" @keyword
+"throw" @keyword
