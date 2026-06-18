@@ -2,10 +2,10 @@ id = "cangjie"
 name = "Cangjie"
 version = "0.1.0"
 schema_version = 1
-authors = ["Cangjie Community"]
+authors = ["KangLong"]
 description = "Cangjie programming language support for Zed"
-repository = "https://github.com/your-username/cangjie-zed"
+repository = "https://github.com/KangLong/cangjie-zed"
 
 [grammars.cangjie]
-repository = "file:///g:/Work/Projects/Self/cangjie-zed"
+repository = "https://github.com/KangLong/cangjie-zed"
 rev = "master"
