@@ -100,3 +100,13 @@
 "%" @operator
 "++" @operator
 "--" @operator
+"==" @operator
+"!=" @operator
+"<" @operator
+">" @operator
+"<=" @operator
+">=" @operator
+"!" @operator
+"~" @operator
+"&&" @operator
+"||" @operator
