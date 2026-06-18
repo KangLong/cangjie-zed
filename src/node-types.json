@@ -1013,10 +1013,6 @@
           "named": true
         },
         {
-          "type": "blockComment",
-          "named": true
-        },
-        {
           "type": "booleanLiteral",
           "named": true
         },
@@ -1054,10 +1050,6 @@
         },
         {
           "type": "lambdaExpression",
-          "named": true
-        },
-        {
-          "type": "lineComment",
           "named": true
         },
         {
@@ -2600,133 +2592,6 @@
     }
   },
   {
-    "type": "inMultiLineStringExpression",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "arrayLiteral",
-          "named": true
-        },
-        {
-          "type": "atomicVariable",
-          "named": true
-        },
-        {
-          "type": "binaryExpreesion",
-          "named": true
-        },
-        {
-          "type": "booleanLiteral",
-          "named": true
-        },
-        {
-          "type": "doWhileExpression",
-          "named": true
-        },
-        {
-          "type": "floatLiteral",
-          "named": true
-        },
-        {
-          "type": "forInExpression",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "ifExpression",
-          "named": true
-        },
-        {
-          "type": "integerLiteral",
-          "named": true
-        },
-        {
-          "type": "jumpExpression",
-          "named": true
-        },
-        {
-          "type": "lambdaExpression",
-          "named": true
-        },
-        {
-          "type": "macroExpression",
-          "named": true
-        },
-        {
-          "type": "matchExpression",
-          "named": true
-        },
-        {
-          "type": "parenthesizedExpression",
-          "named": true
-        },
-        {
-          "type": "postfixExpression",
-          "named": true
-        },
-        {
-          "type": "quoteExpression",
-          "named": true
-        },
-        {
-          "type": "rangeExpression",
-          "named": true
-        },
-        {
-          "type": "runeLiteral",
-          "named": true
-        },
-        {
-          "type": "spawnExpression",
-          "named": true
-        },
-        {
-          "type": "stringLiteral",
-          "named": true
-        },
-        {
-          "type": "synchronizedExpression",
-          "named": true
-        },
-        {
-          "type": "thisSuperExpression",
-          "named": true
-        },
-        {
-          "type": "tryExpression",
-          "named": true
-        },
-        {
-          "type": "tupleExpression",
-          "named": true
-        },
-        {
-          "type": "unaryExpression",
-          "named": true
-        },
-        {
-          "type": "unitLiteral",
-          "named": true
-        },
-        {
-          "type": "unsafeExpression",
-          "named": true
-        },
-        {
-          "type": "whileExpression",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "incOrDec",
     "named": true,
     "fields": {}
@@ -2876,133 +2741,6 @@
         },
         {
           "type": "parameterList",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "inlineExpression",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "arrayLiteral",
-          "named": true
-        },
-        {
-          "type": "atomicVariable",
-          "named": true
-        },
-        {
-          "type": "binaryExpreesion",
-          "named": true
-        },
-        {
-          "type": "booleanLiteral",
-          "named": true
-        },
-        {
-          "type": "doWhileExpression",
-          "named": true
-        },
-        {
-          "type": "floatLiteral",
-          "named": true
-        },
-        {
-          "type": "forInExpression",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "ifExpression",
-          "named": true
-        },
-        {
-          "type": "integerLiteral",
-          "named": true
-        },
-        {
-          "type": "jumpExpression",
-          "named": true
-        },
-        {
-          "type": "lambdaExpression",
-          "named": true
-        },
-        {
-          "type": "macroExpression",
-          "named": true
-        },
-        {
-          "type": "matchExpression",
-          "named": true
-        },
-        {
-          "type": "parenthesizedExpression",
-          "named": true
-        },
-        {
-          "type": "postfixExpression",
-          "named": true
-        },
-        {
-          "type": "quoteExpression",
-          "named": true
-        },
-        {
-          "type": "rangeExpression",
-          "named": true
-        },
-        {
-          "type": "runeLiteral",
-          "named": true
-        },
-        {
-          "type": "spawnExpression",
-          "named": true
-        },
-        {
-          "type": "stringLiteral",
-          "named": true
-        },
-        {
-          "type": "synchronizedExpression",
-          "named": true
-        },
-        {
-          "type": "thisSuperExpression",
-          "named": true
-        },
-        {
-          "type": "tryExpression",
-          "named": true
-        },
-        {
-          "type": "tupleExpression",
-          "named": true
-        },
-        {
-          "type": "unaryExpression",
-          "named": true
-        },
-        {
-          "type": "unitLiteral",
-          "named": true
-        },
-        {
-          "type": "unsafeExpression",
-          "named": true
-        },
-        {
-          "type": "whileExpression",
           "named": true
         }
       ]
@@ -3226,10 +2964,6 @@
           "named": true
         },
         {
-          "type": "blockComment",
-          "named": true
-        },
-        {
           "type": "booleanLiteral",
           "named": true
         },
@@ -3271,10 +3005,6 @@
         },
         {
           "type": "lambdaParameters",
-          "named": true
-        },
-        {
-          "type": "lineComment",
           "named": true
         },
         {
@@ -3830,10 +3560,6 @@
           "named": true
         },
         {
-          "type": "blockComment",
-          "named": true
-        },
-        {
           "type": "booleanLiteral",
           "named": true
         },
@@ -3879,10 +3605,6 @@
         },
         {
           "type": "lambdaExpression",
-          "named": true
-        },
-        {
-          "type": "lineComment",
           "named": true
         },
         {
@@ -4005,10 +3727,6 @@
           "named": true
         },
         {
-          "type": "blockComment",
-          "named": true
-        },
-        {
           "type": "booleanLiteral",
           "named": true
         },
@@ -4046,10 +3764,6 @@
         },
         {
           "type": "lambdaExpression",
-          "named": true
-        },
-        {
-          "type": "lineComment",
           "named": true
         },
         {
@@ -6809,21 +6523,7 @@
   {
     "type": "stringLiteral",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "inMultiLineStringExpression",
-          "named": true
-        },
-        {
-          "type": "inlineExpression",
-          "named": true
-        }
-      ]
-    }
+    "fields": {}
   },
   {
     "type": "structBody",
@@ -7113,10 +6813,6 @@
           "named": true
         },
         {
-          "type": "blockComment",
-          "named": true
-        },
-        {
           "type": "booleanLiteral",
           "named": true
         },
@@ -7158,10 +6854,6 @@
         },
         {
           "type": "lambdaParameters",
-          "named": true
-        },
-        {
-          "type": "lineComment",
           "named": true
         },
         {
@@ -7249,10 +6941,6 @@
       "required": false,
       "types": [
         {
-          "type": "blockComment",
-          "named": true
-        },
-        {
           "type": "classDefinition",
           "named": true
         },
@@ -7278,10 +6966,6 @@
         },
         {
           "type": "interfaceDefinition",
-          "named": true
-        },
-        {
-          "type": "lineComment",
           "named": true
         },
         {
@@ -8685,23 +8369,11 @@
     "named": false
   },
   {
-    "type": "\"",
-    "named": false
-  },
-  {
-    "type": "\"\"\"",
-    "named": false
-  },
-  {
     "type": "$",
     "named": false
   },
   {
     "type": "$(",
-    "named": false
-  },
-  {
-    "type": "${",
     "named": false
   },
   {
@@ -8726,10 +8398,6 @@
   },
   {
     "type": "&=",
-    "named": false
-  },
-  {
-    "type": "'",
     "named": false
   },
   {
@@ -9041,10 +8709,6 @@
     "named": false
   },
   {
-    "type": "\\u{",
-    "named": false
-  },
-  {
     "type": "]",
     "named": false
   },
@@ -9070,7 +8734,8 @@
   },
   {
     "type": "blockComment",
-    "named": true
+    "named": true,
+    "extra": true
   },
   {
     "type": "booleanLiteral",
@@ -9202,7 +8867,8 @@
   },
   {
     "type": "lineComment",
-    "named": true
+    "named": true,
+    "extra": true
   },
   {
     "type": "macro",

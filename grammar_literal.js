@@ -55,12 +55,12 @@ module.exports = function ($) {
         runeLiteral: _ => token(runeLiteral),
         booleanLiteral: _ => token(choice('true', 'false')),
         stringLiteral: $ => choice($._lineStringLiteral, $._multiLineStringLiteral, $._multiLineRawStringLiteral),
-        _lineStringLiteral: $ => choice(
-            seq('\'', repeat(choice(/[^'\\]/, uniCharacterLiteral, escapedIdentifier, $.inlineExpression)), '\''),
-            seq('"', repeat(choice(/[^"\\]/, uniCharacterLiteral, escapedIdentifier, $.inlineExpression)), '"'),
-        ),
+        _lineStringLiteral: $ => token(choice(
+            seq('\'', repeat(choice(/[^'\\]/, uniCharacterLiteral, escapedIdentifier)), '\''),
+            seq('"', repeat(choice(/[^"\\]/, uniCharacterLiteral, escapedIdentifier)), '"'),
+        )),
         inlineExpression: $ => seq('${', $._expression, repeat(seq(repeat1(';'), $._expression)), '}'),
-        _multiLineStringLiteral: $ => seq(seq('"""', /\r?\n/), repeat(choice(/[^\\]/, uniCharacterLiteral, escapedIdentifier, $.inMultiLineStringExpression)), '"""'),
+        _multiLineStringLiteral: $ => token(seq(seq('"""', /\r?\n/), repeat(choice(/[^\\]/, uniCharacterLiteral, escapedIdentifier)), '"""')),
         inMultiLineStringExpression: $ => seq('${', optional(seq($._expression, repeat(seq(repeat(terminator), $._expression)))), '}'),
         _multiLineRawStringLiteral: $ => seq($._multiLineRawStringStart, optional($._multiLineRawStringContent), $._multiLineRawStringEND),
         unitLiteral: _ => seq('(', ')'),
