@@ -95,3 +95,8 @@
 "this" @keyword
 "+" @operator
 "-" @operator
+"*" @operator
+"/" @operator
+"%" @operator
+"++" @operator
+"--" @operator
